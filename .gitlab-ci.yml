@@ -1,0 +1,16 @@
+image: java:8-jdk
+
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+
+build:
+  stage: build
+  script:
+    - chmod +x ./gradlew
+    - ./gradlew build
+  artifacts:
+    paths:
+      - 'build/libs/*.jar'
