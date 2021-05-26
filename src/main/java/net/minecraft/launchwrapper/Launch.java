@@ -304,7 +304,7 @@ public class Launch {
                     if (!file.delete()) {
                         return false;
                     }
-                } else if (!clean(dir)) {
+                } else if (!clean(file)) {
                     return false;
                 }
             }
